@@ -3,15 +3,15 @@ pipeline {
     stages {
         stage("clone code") {
             steps {
-                sh "rm -r *"
-                git url: 'https://github.com/Nagendra2140/node-js-sample.git'
+                //sh "rm -r *"
+                git url: 'https://github.com/Dineshgit1996/node_cicd.git'
             }
         }
         stage("deploy"){
             steps {
                 sshagent(['Nodejs']) {
-                    sh "scp -r -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/nodejs_cicd/* ubuntu@65.1.110.216:/var/www/html/node-js-sample"
-                    sh "ssh ubuntu@65.1.110.216 /var/www/html/node-js-sample/npm.sh"
+                    sh "scp -r -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/NodejsProject/* ubuntu@13.126.32.228:/var/www/html/"
+                    sh "ssh ubuntu@13.126.32.228 /var/www/html/npm.sh"
                 }
             }
         }  
