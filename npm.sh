@@ -2,7 +2,7 @@
 
 cd /var/www/html/
 
-sudo npm install
+npm install
 
 #To execute this command you need to create service for nodejs application in remote server
 
